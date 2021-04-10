@@ -7,6 +7,7 @@ public class Product {
 	private long price;
 	private int qty;
 	private int noItem;
+	boolean active = true;
 	
 	Product(){
 		
@@ -56,7 +57,22 @@ public class Product {
 	}
 	
 	public String toString() {
-		return "Item Number\t\t: "+this.noItem+"\nName\t\t\t: "+this.item+"\nQuantity in stock\t: "+this.qty+"\nPrice\t\t\t: "+this.price;
+		String active = this.active == true ? "Active" : "Discontinued";
+		return "Item Number\t\t: "+this.noItem+"\nName\t\t\t: "+this.item+"\nQuantity in stock\t: "+this.qty+"\nPrice\t\t\t: "
+				+this.price+"\nStock Value\t\t: "+itemValue()+"\nProduct status\t\t: "+active+"\n";
+	}
+
+	//getter setter boolean
+	public boolean isActive() {
+		return active;
+	}
+
+	public void setActive(boolean active) {
+		this.active = active;
+	}
+	
+	public long itemValue() {
+		return this.price * this.qty;
 	}
 	
 

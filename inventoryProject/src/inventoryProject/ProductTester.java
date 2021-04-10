@@ -1,9 +1,45 @@
 package inventoryProject;
 
+import java.util.Scanner;
+
 public class ProductTester {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		
+		Scanner in = new Scanner(System.in);
+		
+		int tempNumber;
+		String tempName;
+		int tempQty;
+		long tempPrice;
+		
+		System.out.println("Input your product name : ");
+		tempName = in.nextLine();
+		System.out.println("Input the quantity of your product : ");
+		tempQty = in.nextInt();
+		System.out.println("Input the price of your product : ");
+		tempPrice = in.nextLong();
+		System.out.println("Input a desired item number for your product : ");
+		tempNumber = in.nextInt();
+		
+		Product p1 = new Product(tempNumber, tempName, tempQty, tempPrice);
+		
+		// clear the input value
+		in.nextLine();
+		
+		System.out.println("Input your product name : ");
+		tempName = in.nextLine();
+		System.out.println("Input the quantity of your product : ");
+		tempQty = in.nextInt();
+		System.out.println("Input the price of your product : ");
+		tempPrice = in.nextLong();
+		System.out.println("Input a desired item number for your product : ");
+		tempNumber = in.nextInt();
+		
+		Product p2 = new Product(tempNumber, tempName, tempQty, tempPrice);
+		
+		in.close();
 		
 		Product keyboard = new Product();
 		keyboard.setNoItem(1);
@@ -22,12 +58,20 @@ public class ProductTester {
 		Product chair = new Product(5, "Chair", 3, 420000);
 		Product pen = new Product(6, "Writing Pen", 6, 20000);
 		
-		System.out.println(keyboard+"\n");
-		System.out.println(mouse+"\n");
-		System.out.println(monitor+"\n");
-		System.out.println(table+"\n");
-		System.out.println(chair+"\n");
-		System.out.println(pen+"\n");
+		System.out.println(p1);
+		System.out.println(p2);
+		System.out.println(keyboard);
+		System.out.println(mouse);
+		System.out.println(monitor);
+		System.out.println(table);
+		System.out.println(chair);
+		System.out.println(pen);
+		
+		Product p6 = new Product(7, "Tires", 9, 479000);
+		p6.setActive(false);
+		
+		System.out.println(p6);
+		
 		
 	}
 
